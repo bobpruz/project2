@@ -1,0 +1,26 @@
+{
+  "name": "project-2",
+  "version": "1.0.0",
+  "description": "Full Stack Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bobpruz/project2.git"
+  },
+  "keywords": [
+    "library"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bobpruz/project2/issues"
+  },
+  "homepage": "https://github.com/bobpruz/project2#readme",
+  "dependencies": {
+    "jest": "^28.1.0"
+ }
+}
