@@ -11,6 +11,25 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+    Book.findOne({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbBookData => {
+            if (!dbBookData) {
+                res.status(404).json({ message: 'No Book found with this id' });
+                return;
+            }
+            res.json(dbBookData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 router.post('/', (req, res) => {
     if (req.session) {
         Book.create({
