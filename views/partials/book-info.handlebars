@@ -1,0 +1,14 @@
+<article class="book">
+  <div class="title">
+    <a href="{{id}}" target="_blank">{{title}}</a>
+    <span>({{id}})</span>
+    Author: {{author}}
+  </div>
+  <div class="meta">
+    {{#if quantity}}
+    Quantity on hand: {{quantity}}
+    {{else}}
+    Not Available
+    {{/if}}
+  </div>
+</article>
