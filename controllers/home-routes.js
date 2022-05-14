@@ -20,4 +20,34 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/:id", (req, res) => {
+  Book.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: ["id", "title", "author", "subject", "quantity"],
+    include: [
+      {
+        model: Reviews,
+        attributes: ['id', 'review', 'user_id', 'book_id'],
+        include: {
+          model: User,
+          attributes: ['name']
+        }
+      }
+    ]
+  })
+    .then((bookData) => {
+      const book = bookData.get({ plain: true });
+
+      res.render("singlebook", {
+        book,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 module.exports = router;
