@@ -70,7 +70,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
     Reviews.destroy({
         where: {
             id: req.params.id
