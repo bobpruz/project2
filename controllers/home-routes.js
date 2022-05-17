@@ -5,7 +5,19 @@ const { Book, User, Reviews, Barrowed } = require("../models");
 
 router.get("/", (req, res) => {
   Book.findAll({
-    attributes: ["id", "title", "author", "subject", "quantity"],
+    attributes: [
+      "id",
+      "title",
+      "author",
+      "subject",
+      "quantity",
+      [
+        sequelize.literal(
+          "(SELECT COUNT(*) FROM barrowed WHERE book.id = barrowed.book_id)"
+        ),
+        "barrowed_count",
+      ],
+    ],
   })
     .then((bookData) => {
       const book = bookData.map((book) => book.get({ plain: true }));
@@ -23,19 +35,19 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
   Book.findOne({
     where: {
-      id: req.params.id
+      id: req.params.id,
     },
     attributes: ["id", "title", "author", "subject", "quantity"],
     include: [
       {
         model: Reviews,
-        attributes: ['id', 'review', 'user_id', 'book_id'],
+        attributes: ["id", "review", "user_id", "book_id"],
         include: {
           model: User,
-          attributes: ['name']
-        }
-      }
-    ]
+          attributes: ["name"],
+        },
+      },
+    ],
   })
     .then((bookData) => {
       const book = bookData.get({ plain: true });
