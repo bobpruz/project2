@@ -13,7 +13,6 @@
     padding: 1.25rem;
     font-family: "Manrope", sans-serif;
     display: flex;
-    align-items: center;
     justify-content: space-around;
     height: calc(100vh - 0.1px);
     text-align: center;

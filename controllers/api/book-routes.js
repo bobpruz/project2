@@ -3,7 +3,26 @@ const { Book, User, Reviews, Barrowed } = require("../../models");
 const sequelize = require('../../config/connection');
 
 router.get('/', (req, res) => {
-    Book.findAll()
+    Book.findAll({
+        attributes: [
+            'id',
+            'title',
+            'author',
+            'subject',
+            'quantity',
+            'created_at',
+        ],
+        include: [
+            {
+                model: Reviews,
+                attributes: ['id', 'review', 'book_id', 'user_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['name']
+                }
+            },
+        ]
+    })
     .then(dbBookData => res.json(dbBookData))
     .catch(err => {
         console.log(err);

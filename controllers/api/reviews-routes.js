@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Reviews } = require("../../models");
 const sequelize = require('../../config/connection');
+const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
     Reviews.findAll()
@@ -30,11 +31,11 @@ router.get('/:id', (req, res) => {
         });
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     if (req.session) {
         Reviews.create({
             review: req.body.review,
-            user_id: req.body.user_id,
+            user_id: req.session.user_id,
             book_id: req.body.book_id,
             
         })
@@ -46,7 +47,7 @@ router.post('/', (req, res) => {
     }
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Reviews.update(
         {
             review: req.body.review
@@ -70,7 +71,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Reviews.destroy({
         where: {
             id: req.params.id

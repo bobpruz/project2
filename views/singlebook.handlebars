@@ -1,5 +1,6 @@
 {{> book-info book }}
 
+{{#if loggedIn}}
     <form class="review-form">
         <div>
             <textarea name="review-body"></textarea>
@@ -9,8 +10,8 @@
             <button type="submit">add review</button>
         </div>
     </form>
+{{/if}}
 
-
-{{> review book.review}}
+{{> review book.reviews}}
 
     <script src="/javascript/reviews.js"></script>
