@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Manrope:wght@800&display=swap");
+
+:root {
+    --light-orange: hwb(31 69% 5%);
+    --mid-Orang: hsl(42, 97%, 56%);
+    --Orange: hsl(28, 98%, 50%);
+    --dk-Orange: rgb(255, 81, 0);
+    --black: hsl(0, 0%, 0%);
+    }
+  
+ body {
+    background-color: var(--Orange);
+    padding: 1.25rem;
+    font-family: "Manrope", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: calc(100vh - 0.1px);
+    text-align: center;
+}
+
+header {
+ width: 300px;
+ border:hsl(42, 97%, 56%);
+ padding: 50px;
+ margin: 20px;
+
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+nav {
+    display: flex;
+    background-color: var(--light-Orang);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: var(--dk-Orange);
+    text-align: center;
+    padding: 10px;
+}
