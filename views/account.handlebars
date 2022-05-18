@@ -1,0 +1,17 @@
+<section>
+{{#if book.length}}
+<section>
+  <h2>Your Books</h2>
+<ol class="book-list">
+  {{#each book as |book|}}
+  <li>
+    {{>  book-info book }}
+  </li>
+  {{/each}}
+</ol>
+{{else}}
+No Books Barrowed
+</section>
+{{/if}}
+
+<script src="/javascript/add-post.js"></script>
