@@ -15,7 +15,12 @@
         <a href="/">Detroit Public Library</a>
       </h1>
       <nav>
-        <a href="/dashboard">Account</a>
+        {{#if loggedIn}}
+        <a href="/account">Account</a>
+        <button id="logout" class="btn-no-style">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
       </nav>
     </header>
     <main>
@@ -25,6 +30,9 @@
       Keep on Reading!
     </footer>
   </div>
+  {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
