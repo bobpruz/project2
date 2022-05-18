@@ -1,19 +1,19 @@
 async function reviewFormHandler(event) {
     event.preventDefault();
 
-    const review_text = document.querySelector('textarea[name="review-body"]').value.trim();
+    const review = document.querySelector('textarea[name="review-body"]').value.trim();
 
     const book_id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
 
-    if (review_text) {
-        console.log('hello')
+    if (review) {
+        console.log(review)
         const response = await fetch('/api/reviews', {
             method: 'POST',
             body: JSON.stringify({
                 book_id,
-                review_text
+                review
             }),
             headers: {
                 'Content-Type': 'application/json'

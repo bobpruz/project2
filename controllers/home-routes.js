@@ -52,7 +52,7 @@ router.get("/:id", (req, res) => {
     include: [
       {
         model: Reviews,
-        attributes: ["id", "review", "user_id", "book_id"],
+        attributes: ["id", "review", "user_id", "book_id", "created_at"],
         include: {
           model: User,
           attributes: ["name"],
