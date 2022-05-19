@@ -24,7 +24,8 @@ router.get("/", (req, res) => {
 
       res.render("homepage", {
         book,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        user_id: req.session.user_id
       });
     })
     .catch((err) => {

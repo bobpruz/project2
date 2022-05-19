@@ -16,7 +16,7 @@
       </h1>
       <nav>
         {{#if loggedIn}}
-        <a href="/account">Account</a>
+        <a href="/account/{{user_id}}">Account</a>
         <button id="logout" class="btn-no-style">logout</button>
         {{else}}
         <a href="/login">login</a>
