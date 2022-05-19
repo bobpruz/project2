@@ -3,10 +3,10 @@ const res = require("express/lib/response");
 const sequelize = require("../config/connection");
 const { Book, User, Barrowed } = require("../models");
 
-router.get("/:name", (req, res) => {
+router.get("/:id", (req, res) => {
   User.findAll({
     where: {
-      name: req.params.name,
+      id: req.params.id,
     },
     attributes: ["id", "name"],
     include: [
