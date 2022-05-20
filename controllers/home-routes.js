@@ -25,7 +25,7 @@ router.get("/", (req, res) => {
       res.render("homepage", {
         book,
         loggedIn: req.session.loggedIn,
-        user_id: req.session.user_id
+        user_id: req.session.user_id,
       });
     })
     .catch((err) => {
@@ -35,13 +35,13 @@ router.get("/", (req, res) => {
 });
 
 // login route
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-      res.redirect('/');
-      return;
+    res.redirect("/");
+    return;
   }
-  
-  res.render('login');
+
+  res.render("login");
 });
 
 router.get("/:id", (req, res) => {
@@ -66,7 +66,8 @@ router.get("/:id", (req, res) => {
 
       res.render("singlebook", {
         book,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        user_id: req.session.user_id,
       });
     })
     .catch((err) => {
