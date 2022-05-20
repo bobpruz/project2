@@ -25,6 +25,8 @@ router.get("/:id", (req, res) => {
 
       res.render("account", {
         book,
+        loggedIn: req.session.loggedIn,
+        user_id: req.session.user_id,
       });
     })
     .catch((err) => {
