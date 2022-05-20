@@ -1,8 +1,10 @@
 <article class="book">
-  <div class="title">
-    <a href="{{id}}">{{title}}</a>
+  <div class="book-info">
+    <div class="title mb-3">
+      <h2 class="mb-3"><a href="{{id}}">{{title}}</a></h2>
+      Author: {{author}}
+    </div>
     <span><img src="/images/{{id}}.jpg" alt="{{title}} cover picture"></span>
-    Author: {{author}}
   </div>
   <div class="meta">
     {{#if quantity}}
