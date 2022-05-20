@@ -1,17 +1,19 @@
-{{> book-info book }}
-
-{{#if loggedIn}}
-    <form class="review-form">
-        <div>
-            <textarea name="review-body"></textarea>
-        </div>
-
-        <div>
-            <button type="submit">add review</button>
-        </div>
-    </form>
-{{/if}}
-
-{{> review book.reviews}}
+<div>
+    {{> book-info book }}
+    
+    {{#if loggedIn}}
+        <form class="review-form">
+            <div>
+                <textarea name="review-body"></textarea>
+            </div>
+    
+            <div>
+                <button type="submit">add review</button>
+            </div>
+        </form>
+    {{/if}}
+    
+    {{> review book.reviews}}
+</div>
 
     <script src="/javascript/reviews.js"></script>

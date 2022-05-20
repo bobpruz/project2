@@ -3,7 +3,7 @@ const { Book } = require("../models");
 const bookdata = [
   {
     title: "Absalom Absalom!",
-    author: "author: William Faulkner",
+    author: "William Faulkner",
     subject: "Southern Gothic",
     quantity: 5,
   },
