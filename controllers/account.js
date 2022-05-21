@@ -4,21 +4,15 @@ const sequelize = require("../config/connection");
 const { Book, User, Barrowed } = require("../models");
 
 router.get("/:id", (req, res) => {
-  User.findAll({
+  Barrowed.findAll({
     where: {
-      id: req.params.id,
+      user_id: req.params.id,
     },
-    attributes: ["id", "name"],
-    include: [
-      {
-        model: Barrowed,
-        attributes: ["id", "book_id", "user_id"],
-        include: {
-          model: Book,
-          attributes: ["id", "title", "author"],
-        },
-      },
-    ],
+    attributes: ["id", "book_id", "user_id"],
+    include: {
+      model: Book,
+      attributes: ["id", "title", "author"],
+    },
   })
     .then((bookData) => {
       const book = bookData.map((book) => book.get({ plain: true }));
