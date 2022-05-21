@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     if (req.session) {
         Barrowed.create({
-            user_id: req.body.user_id,
+            user_id: req.session.user_id,
             book_id: req.body.book_id,
         })
         .then(dbBarrowedData => res.json(dbBarrowedData))
