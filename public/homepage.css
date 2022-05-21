@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Manrope:wght@800&display=swap");
+
+* {
+    box-sizing: border-box;
+  }
+  /* Header/Logo Title */
+header {
+    padding: 20px;
+    text-align: center;
+    font-size: 100px;
+    color: white;
+    background: #1abc9c;
+  }
+
+nav{
+  padding: 10px;
+    text-align: center;
+    font-size: 10px;
+    color: black;
+    background-color: #ffffff;
+}
+
+a h1 {
+  color: rgb(255, 255, 255);
+  font-size: 90px;
+  border: none;
+}
+
+a {
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+}
+
+  main {
+    font-size: 10px;
+    Padding: 10px;
+    background-color:#59efd1;
+    position:flex;
+    text-align: left;
+    text-align: top;
+    color: rgb(0, 0, 0);
+    height: 100%;
+    columns: 5;
+    grid-row: 4;
+    row-gap: 150%;
+    top: 300px;
+    }
+ 
+ footer {
+    padding: 20px;
+    height: 75px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 20px;
+  }
