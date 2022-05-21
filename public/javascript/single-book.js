@@ -15,7 +15,7 @@ async function checkoutBook(event) {
         }
     });
     if (response.ok) {
-        document.location.reload();
+        document.location.assign('/');
     } else {
         alert(response.statusText);
     }
