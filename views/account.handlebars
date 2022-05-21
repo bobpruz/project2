@@ -5,8 +5,8 @@
 <ol class="book-list">
   {{#each book as |book|}}
   <li>
-    {{>  book-info book }}
-    <button type="button" class="btn btn-primary" data-barrowed_id="{{id}}">Return Book</button>
+    {{>  single-book-info book }}
+    <button type="button" class="btn btn-primary" data-barrowed_id="{{barrowed_id}}">Return Book</button>
   </li>
   {{/each}}
 </ol>
