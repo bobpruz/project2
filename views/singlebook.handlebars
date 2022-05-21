@@ -2,6 +2,7 @@
     {{> book-info book }}
     
     {{#if loggedIn}}
+        <button type="button" class="btn btn-primary" data-book_id="{{book.id}}">Checkout Book</button>
         <form class="review-form">
             <div>
                 <textarea name="review-body"></textarea>
