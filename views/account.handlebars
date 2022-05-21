@@ -6,7 +6,7 @@
   {{#each book as |book|}}
   <li>
     {{>  book-info book }}
-    <button type="button" class="btn btn-primary" data-barrowed_id="{{barrowed.id}}">Return Book</button>
+    <button type="button" class="btn btn-primary" data-barrowed_id="{{id}}">Return Book</button>
   </li>
   {{/each}}
 </ol>
@@ -14,5 +14,5 @@
 No Books Barrowed
 </section>
 {{/if}}
-
-<script src="/javascript/add-post.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="/javascript/account.js"></script>
