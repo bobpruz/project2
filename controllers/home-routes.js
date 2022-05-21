@@ -24,6 +24,7 @@ router.get("/", (req, res) => {
 
       res.render("homepage", {
         book,
+        style: "homepage.css",
         loggedIn: req.session.loggedIn,
         user_id: req.session.user_id,
       });
@@ -41,7 +42,9 @@ router.get("/login", (req, res) => {
     return;
   }
 
-  res.render("login");
+  res.render("login", {
+    style: "login.css",
+  });
 });
 
 router.get("/:id", (req, res) => {
@@ -66,6 +69,7 @@ router.get("/:id", (req, res) => {
 
       res.render("singlebook", {
         book,
+        style: "singlebook.css",
         loggedIn: req.session.loggedIn,
         user_id: req.session.user_id,
       });

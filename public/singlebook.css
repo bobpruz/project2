@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Manrope:wght@800&display=swap");
+
+* {
+    box-sizing: border-box;
+  }
+  
+  header {
+    padding: 20px;
+    text-align: center;
+    font-size: 100px;
+    color: white;
+    background: #1abc9c;
+   }
+  main {
+    font-size: 10px;
+    Padding: 10px;
+    background-color:#59efd1;
+    position:flex;
+    text-align: left;
+    text-align: top;
+    color: rgb(0, 0, 0);
+    }
+
+  a h1 {
+    color: rgb(255, 255, 255);
+    font-size: 90px;
+    border: none;
+  }
+  
+  book {
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    text-align: center;
+  }
+   
+  footer {
+    padding: 20px;
+    height: 75px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 20px;
+  }
