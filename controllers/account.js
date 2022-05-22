@@ -8,7 +8,7 @@ router.get("/:id", (req, res) => {
     where: {
       user_id: req.params.id,
     },
-    attributes: [['id', 'barrowed_id'], "book_id", "user_id"],
+    attributes: [["id", "barrowed_id"], "book_id", "user_id"],
     include: {
       model: Book,
       attributes: ["id", "title", "author"],
@@ -19,6 +19,7 @@ router.get("/:id", (req, res) => {
 
       res.render("account", {
         book,
+        StyleSheet: "account.css",
         loggedIn: req.session.loggedIn,
         user_id: req.session.user_id,
       });

@@ -3,13 +3,22 @@
 * {
     box-sizing: border-box;
 }
-    header {
-        padding: 20px;
-        text-align: center;
-        font-size: 100px;
-        color: white;
-        background: #1abc9c;
-      }
+header {
+  padding: 20px;
+  text-align: center;
+  font-size: 100px;
+  color: white;
+  background: #1abc9c;
+}
+
+nav{
+padding: 10px;
+  text-align: center;
+  font-size: 10px;
+  color: black;
+  background-color: #ffffff;
+}
+
       main {
         font-size: 30px;
         Padding: 30px;
@@ -33,6 +42,12 @@
         text-decoration: none;
       }
       
+      h2 {
+        color: rgb(255, 255, 255);
+        font-size: 90px;
+        border: none;
+      }
+
       button {
         background-color:#49f8d5;
         border: none;
